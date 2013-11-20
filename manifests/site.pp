@@ -7,4 +7,5 @@ node default {
 	include motd
 	include githubsshproxy
 	include gitclient
+	include puppetmaster
 }
