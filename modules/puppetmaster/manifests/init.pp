@@ -4,8 +4,7 @@ class puppetmaster {
   }
 
   service { "puppetmaster":
-    enable => true,
-    ensure => "running"
+    enable => true
   }
 }
 
