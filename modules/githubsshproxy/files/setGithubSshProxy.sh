@@ -14,4 +14,5 @@ if [[ ${?} -ne 0 ]]; then
 	echo "    hostname github.com" >> ${SSHConfigFile}
 	echo "    port 22" >> ${SSHConfigFile}
 	echo "    proxycommand corkscrew ${VPN_IP} 3128 %h %p" >> ${SSHConfigFile}
+	echo "    StrictHostKeyChecking no" >> ${SSHConfigFile}
 fi
