@@ -12,7 +12,7 @@ if [[ ${?} -ne 0 ]]; then
 
 	while [[ "${VPN_IP}" == "" ]]; do
 		VPN_IP=$(ip -4 addr list eth0 | awk '/inet/{split($2, a, "/"); print a[1]}' | sed -e 's/\.[0-9]*$/.2/g')
-		sleep 1
+		/usr/bin/sleep 1
 	done
 
 	echo "host github.com" > ${SSHConfigFile}
