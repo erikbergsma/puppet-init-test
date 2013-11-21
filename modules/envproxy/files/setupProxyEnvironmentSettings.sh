@@ -3,6 +3,11 @@
 # Get Cloudpipe VPN instance IP, should end on .2
 VPN_IP=$(ip -4 addr list eth0 | awk '/inet/{split($2, a, "/"); print a[1]}' | sed -e 's/\.[0-9]*$/.2/g')
 
+while [[ "${VPN_IP}" == "" ]]; do
+	VPN_IP=$(ip -4 addr list eth0 | awk '/inet/{split($2, a, "/"); print a[1]}' | sed -e 's/\.[0-9]*$/.2/g')
+	sleep 1
+done
+
 # Setup environment variables for cloudpipe web proxy
 echo -e "http_proxy=\"http://${VPN_IP}:3128\"
 HTTP_PROXY=\"http://${VPN_IP}:3128\"
