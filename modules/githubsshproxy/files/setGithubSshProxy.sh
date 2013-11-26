@@ -6,7 +6,7 @@
 homefolder=$(eval /bin/echo ~$(whoami))
 SSHConfigFile="${homefolder}/.ssh/config"
 
-IPBIN=$(which ip)
+IPBIN=$(/usr/bin/which ip)
 
 string=$(grep -o github.com ${SSHConfigFile} 2>/dev/null | head -n1)
 

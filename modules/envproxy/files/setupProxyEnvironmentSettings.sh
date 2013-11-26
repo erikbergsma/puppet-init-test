@@ -1,6 +1,6 @@
 #!/bin/sh
 
-IPBIN=$(which ip)
+IPBIN=$(/usr/bin/which ip)
 
 # Get Cloudp${IPBIN}e VPN instance IP, should end on .2
 VPN_IP=$(${IPBIN} -4 addr list eth0 | /usr/bin/awk '/inet/{split($2, a, "/"); print a[1]}' | /bin/sed -e 's/\.[0-9]*$/.2/g')
