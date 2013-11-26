@@ -1,0 +1,6 @@
+host github.com
+    user root
+    hostname github.com
+    port 22
+    proxycommand corkscrew <%=@__proxy_ip%> 3128 %h %p
+    StrictHostKeyChecking no
